@@ -7,7 +7,7 @@ def test_version():
 
 # TODO - separate tests based on command-line flag
 css_file_path = "tests/test_files/projects/large_project/test.css"
-html_file_path = "tests/test_files/sample_no_errors.html"
+html_file_path = "tests/test_files/sample.html"
 html_with_css = "tests/test_files/html_with_css.html"
 sample_txt_path = "tests/test_files/sample.txt"
 working_dir_txt_path = "README.rst"
@@ -91,27 +91,27 @@ def test_file_to_string_in_project_directory():
 
 def test_get_all_project_files_from_large_project():
     expected = [
-        "tests\\test_files\\projects\\large_project\\about.html",
-        "tests\\test_files\\projects\\large_project\\gallery.html",
-        "tests\\test_files\\projects\\large_project\\index.html",
-        "tests\\test_files\\projects\\large_project\\css\\general.css",
-        "tests\\test_files\\projects\\large_project\\css\\grid-layout.css",
-        "tests\\test_files\\projects\\large_project\\css\\layout.css",
-        "tests\\test_files\\projects\\large_project\\css\\navigation.css",
-        "tests\\test_files\\projects\\large_project\\js\\scripts.js",
+        "tests\\test_files\\large_project\\about.html",
+        "tests\\test_files\\large_project\\gallery.html",
+        "tests\\test_files\\large_project\\index.html",
+        "tests\\test_files\\large_project\\css\\general.css",
+        "tests\\test_files\\large_project\\css\\grid-layout.css",
+        "tests\\test_files\\large_project\\css\\layout.css",
+        "tests\\test_files\\large_project\\css\\navigation.css",
+        "tests\\test_files\\large_project\\js\\scripts.js",
     ]
-    results = clerk.get_all_project_files("tests/test_files/projects/large_project")
+    results = clerk.get_all_project_files("tests/test_files/large_project")
     assert expected == results
 
 
 def test_get_all_html_project_files_from_large_project():
     expected = [
-        "tests\\test_files\\projects\\large_project\\about.html",
-        "tests\\test_files\\projects\\large_project\\gallery.html",
-        "tests\\test_files\\projects\\large_project\\index.html",
+        "tests\\test_files\\large_project\\about.html",
+        "tests\\test_files\\large_project\\gallery.html",
+        "tests\\test_files\\large_project\\index.html",
     ]
     results = clerk.get_all_files_of_type(
-        "tests/test_files/projects/large_project", "html"
+        "tests/test_files/large_project", "html"
     )
     assert expected == results
 
@@ -133,13 +133,13 @@ def test_remove_inline_tags():
     assert results == expected
 
 
-def test_get_file_name_for_html_file_path():
+def test_get_file_name_for_html_filename():
     results = clerk.get_file_name(html_file_path)
-    expected = "sample_no_errors.html"
+    expected = "sample.html"
     assert results == expected
 
 
-def test_get_file_name_for_css_file_path():
+def test_get_file_name_for_css_filename():
     results = clerk.get_file_name(css_file_path)
     expected = "test.css"
     assert results == expected
