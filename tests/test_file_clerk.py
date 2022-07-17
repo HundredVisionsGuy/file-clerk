@@ -1,9 +1,9 @@
 import pytest
 from file_clerk import __version__
-from file_clerk import file_clerk as clerk
+from file_clerk import clerk as clerk
 
 def test_version():
-    assert __version__ == '1.0.1'
+    assert __version__ == '1.0.3'
 
 # TODO - separate tests based on command-line flag
 css_file_path = "tests/test_files/projects/large_project/test.css"
