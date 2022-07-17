@@ -13,9 +13,9 @@ Mac, and Linux (Windows is the one with backslashes - wacky, I know.).
 Typical usage example:
 ----------------------
 
-`extension = get_file_type("path/to/file.js")`
+:code:`extension = get_file_type("path/to/file.js")`
 
-`code_string = file_to_string("path/to/file.html")`
+:code:`code_string = file_to_string("path/to/file.html")`
 
 ```
 project_path = "path/to/project"

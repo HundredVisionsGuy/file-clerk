@@ -17,7 +17,7 @@ Mac, and Linux (Windows is the one with backslashes - wacky, I know.).
   all_project_files = get_all_project_files(project_path)
   just_css_files = get_all_files_of_type(project_path, "css")
 """
-# SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: MIT
 
 import collections
 import re
@@ -257,7 +257,7 @@ def clear_extra_text(my_text: str) -> str:
     return stripped_text
 
 
-if __name__ == "__main__":
+def main():
     html_with_css = "./tests/test_files/html_with_css.html"
 
     # get full path of a relative link
@@ -282,3 +282,7 @@ if __name__ == "__main__":
     results = get_all_files_of_type(test_project_files, "css")
     for i in results:
         print(i)
+
+
+if __name__ == "__main__":
+    main()
