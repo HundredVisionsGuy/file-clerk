@@ -14,6 +14,7 @@ Welcome to file-clerk's documentation!
    intro
    file_clerk
    examples
+   modules
 
 
 Indices and tables
