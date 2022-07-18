@@ -3,7 +3,7 @@ from file_clerk import __version__
 from file_clerk import clerk as clerk
 
 def test_version():
-    assert __version__ == '1.0.3'
+    assert __version__ == '1.0.4'
 
 # TODO - separate tests based on command-line flag
 css_file_path = "tests/test_files/projects/large_project/test.css"
