@@ -1,7 +1,8 @@
 .. file-clerk documentation master file, created by
-   sphinx-quickstart on Mon Jul 18 12:46:41 2022.
+   sphinx-quickstart on Mon Jul 18 14:03:04 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+
 
 Welcome to file-clerk's documentation!
 ======================================
@@ -10,8 +11,10 @@ Welcome to file-clerk's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme
-   modules
+   intro
+   file_clerk
+   examples
+
 
 Indices and tables
 ==================
