@@ -7,7 +7,7 @@ Submodules
 file\_clerk.clerk module
 ------------------------
 
-.. automodule:: file_clerk.clerk
+.. automodule:: clerk
    :members:
    :undoc-members:
    :show-inheritance:

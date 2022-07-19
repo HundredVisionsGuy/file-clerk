@@ -11,6 +11,7 @@ Welcome to file-clerk's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   readme
    intro
    file_clerk
    examples
