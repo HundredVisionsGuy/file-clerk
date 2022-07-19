@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Examples &#8212; file-clerk 1.0.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="file_clerk" href="modules.html" />
+    <link rel="prev" title="file_clerk package" href="file_clerk.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">file-clerk 1.0.4 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="file_clerk.html" title="file_clerk package"
+             accesskey="P">previous</a> |
+          <a href="modules.html" title="file_clerk"
+             accesskey="N">next</a> |
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<section id="installation-quick-start">
+<h2>Installation (Quick Start):<a class="headerlink" href="#installation-quick-start" title="Permalink to this heading">¶</a></h2>
+<p>To begin using <cite>file-clerk</cite> in your Python project, you may install with:
+<code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">file-clerk</span></code></p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">file_clerk.clerk</span> <span class="k">as</span> <span class="nn">clerk</span>
+
+<span class="c1"># get the path to your project files (you want to manipulate)</span>
+<span class="c1"># use posix path format (forward slashes)</span>
+<span class="n">project_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/project&quot;</span>
+
+<span class="c1"># get all files as strings from project folder</span>
+<span class="n">all_project_files</span> <span class="o">=</span> <span class="n">clerk</span><span class="o">.</span><span class="n">get_all_project_files</span><span class="p">(</span><span class="n">project_path</span><span class="p">)</span>
+
+<span class="c1"># get only the HTML files</span>
+<span class="n">html_only_files</span> <span class="o">=</span> <span class="n">clerk</span><span class="o">.</span><span class="n">get_all_files_of_type</span><span class="p">(</span><span class="n">project_path</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="p">)</span>
+
+<span class="c1"># get extension to file (without the dot)</span>
+<span class="n">file_extension</span> <span class="o">=</span> <span class="n">get_file_type</span><span class="p">(</span><span class="s2">&quot;path/to/file.ext&quot;</span><span class="p">)</span>
+
+<span class="c1"># extract a list of sentences from a paragraph:</span>
+<span class="n">paragraph</span> <span class="o">=</span> <span class="s2">&quot;No, I&#39;ll fix it. I&#39;m good at fixing rot. Call me the Rotmeister. &quot;</span>
+<span class="n">paragraph</span> <span class="o">+=</span> <span class="s2">&quot;No, I&#39;m the Doctor. Don&#39;t call me the Rotmeister.&quot;</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">clerk</span><span class="o">.</span><span class="n">split_into_sentences</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+<span class="n">number_sentences</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span> <span class="c1"># equals 5</span>
+
+<span class="c1"># Make sure a file exists - helps to avoid file not found errors</span>
+<span class="n">exists</span> <span class="o">=</span> <span class="n">clerk</span><span class="o">.</span><span class="n">file_exists</span><span class="p">(</span><span class="n">possible_file_path</span><span class="p">)</span>
+
+<span class="c1"># Get the contents of a file as a string (but only if it exists)</span>
+<span class="k">if</span> <span class="n">exists</span><span class="p">:</span>
+    <span class="n">file_contents</span> <span class="o">=</span> <span class="n">clerk</span><span class="o">.</span><span class="n">file_to_string</span><span class="p">(</span><span class="n">possible_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_clerk.html">file_clerk package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-quick-start">Installation (Quick Start):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">file_clerk</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="file_clerk.html" title="file_clerk package"
+              >previous</a> |
+            <a href="modules.html" title="file_clerk"
+              >next</a> |
+            <a href="py-modindex.html" title="Python Module Index"
+              >modules</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/examples.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Chris Winikka.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
