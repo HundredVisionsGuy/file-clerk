@@ -1,0 +1,21 @@
+sources_dir: docs
+templates_dir: docs/templates
+repo: https://github.com/HundredVisionsGuy/file-clerk
+version: main
+pages:
+  - page: "scripts/clerk/clerk.md"
+    source: "file_clerk/clerk.py"
+    functions:
+      - file_exists
+      - delete_file
+      - get_path_list
+      - get_full_path_string
+      - file_to_string
+      - get_file_type
+      - get_file_name
+      - get_linked_css
+      - get_all_project_files
+      - get_all_files_of_type
+      - split_into_sentences
+      - remove_tags
+      - clear_extra_text
