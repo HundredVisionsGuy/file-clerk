@@ -49,8 +49,289 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 </section>
-<section id="file-clerk-clerk-module">
-<h2>file_clerk.clerk module<a class="headerlink" href="#file-clerk-clerk-module" title="Permalink to this heading">¶</a></h2>
+<section id="module-file_clerk.clerk">
+<span id="file-clerk-clerk-module"></span><h2>file_clerk.clerk module<a class="headerlink" href="#module-file_clerk.clerk" title="Permalink to this heading">¶</a></h2>
+<p>A collection of functions for dealing with files and file content.</p>
+<p>This was a library I created for previous projects that deal with files
+and file paths in order to get code from files, lists of files in
+project folders, file extensions, and allows us to capture just files
+of a particular type. I also developed my projects on Windows OS, so
+these functions were designed to work with the file paths on Windows,
+Mac, and Linux (Windows is the one with backslashes - wacky, I know.).</p>
+<blockquote>
+<div><p>Typical usage example:</p>
+<p>extension = get_file_type(“path/to/file.js”)</p>
+<p>code_string = file_to_string(“path/to/file.html”)</p>
+<p>project_path = “path/to/project”
+all_project_files = get_all_project_files(project_path)
+just_css_files = get_all_files_of_type(project_path, “css”)</p>
+</div></blockquote>
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.clear_extra_text">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">clear_extra_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#clear_extra_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.clear_extra_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes line returns and extra spaces from my_text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>my_text</strong> (<em>str</em>) – text which may include line returns or extra space.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>text without any line returns or additional spaces.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>stripped_text (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.delete_file">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">delete_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/file_clerk/clerk.html#delete_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>deletes file in path but only if it exists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file location</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.file_exists">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">file_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#file_exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.file_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True or False: whether file in path exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file location</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True or False: True if file exists False if not</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.file_to_string">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">file_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#file_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.file_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns contents of file as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to a file using Posix format (forward
+slashes e.g. path/to/file.ext)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The contents of the file in utf-8 string</dt><dd><p>format.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>file_text (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_all_files_of_type">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_all_files_of_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filetype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_all_files_of_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_all_files_of_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all files of a particular type from a directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dir_path</strong> (<em>str</em>) – The path to a directory using Posix format
+(forward slashes e.g. path/to/file.ext)</p></li>
+<li><p><strong>file_type</strong> (<em>str</em>) – An extension in the form of a string (without
+the dot (html, css, js, etc.))</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all html, css, and javascript files</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>files (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_all_project_files">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_all_project_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_all_project_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_all_project_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of all files from the directory in the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dir_path</strong> (<em>str</em>) – The path to a directory using Posix format
+(forward slashes e.g. path/to/file.ext)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all html, css, and javascript files</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>files (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_file_name">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the name of the file in the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to a file using Posix format (forward
+slashes e.g. path/to/file.ext)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the file (with extension)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>filename (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_file_type">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_file_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_file_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_file_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the extension of the file in the path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to a file using Posix format (forward
+slashes e.g. path/to/file.ext)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The extension of the file type (without)
+the dot (eg. html, js, css, pdx, png)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>extension (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_full_path_string">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_full_path_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_full_path_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_full_path_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns absolute path to file in relative path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file location using the Posix format
+(forward/slashes)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>will be a WindowsPath (if Windows) or</dt><dd><p>PosixPath (if Mac or Linux)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>full_path (Path Object)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_linked_css">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_linked_css</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contents_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_linked_css"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_linked_css" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of linked CSS files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>contents_str</strong> (<em>str</em>) – HTML code from a file in string format.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of all filenames extracted from CSS</dt><dd><p>link tags.
+Note: no external stylesheets will be included (only
+local files).</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>filenames (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.get_path_list">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">get_path_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#get_path_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.get_path_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of each path part using slash as separator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file location using the Posix format
+(forward/slashes)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A path of each folder in a path, with the</dt><dd><p>file at the end.
+Example: path/to/file.ext will be
+[“path”, “to”, “file.ext”]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>path_list (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.main">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/file_clerk/clerk.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.remove_tags">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">remove_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#remove_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.remove_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all HTML tags from another tag’s contents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>element</strong> (<em>str</em>) – the contents of a tag as a string form which might or</p></li>
+<li><p><strong>tags</strong> (<em>might not have extra tags</em><em> (</em><em>in particular inline</em>) – </p></li>
+<li><p><strong>&lt;em&gt;</strong> (<em>such as</em>) – </p></li>
+<li><p><strong>&lt;a&gt;</strong> (<em>or</em>) – </p></li>
+<li><p><strong>etc.</strong><strong>)</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the contents of the tag minus any inner tags.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tagless_content (str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_clerk.clerk.split_into_sentences">
+<span class="sig-prename descclassname"><span class="pre">file_clerk.clerk.</span></span><span class="sig-name descname"><span class="pre">split_into_sentences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/file_clerk/clerk.html#split_into_sentences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#file_clerk.clerk.split_into_sentences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of each sentence from the text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>contents</strong> (<em>str</em>) – A string of text (typically from a tag) that
+most likely has punctuation.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list of each sentence from the text</dt><dd><p>each in string format</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sentences (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-file_clerk">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-file_clerk" title="Permalink to this heading">¶</a></h2>
@@ -68,10 +349,11 @@
           <h3>Table of Contents</h3>
           <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">file-clerk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">file_clerk package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-clerk-clerk-module">file_clerk.clerk module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-file_clerk.clerk">file_clerk.clerk module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-file_clerk">Module contents</a></li>
 </ul>
 </li>
