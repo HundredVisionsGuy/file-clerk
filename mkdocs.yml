@@ -1,20 +1,18 @@
-site_name: file-clerk documentation
-repo_name: 'file-clerk'
+site_name: file-clerk Documentation
+repo_name: 'HundredVisionsGuy/file-clerk'
 repo_url: 'https://github.com/HundredVisionsGuy/file-clerk'
-copyright: 'Made by <a href="https://github.com/HundredVisionsGuy">Chris Winikka (HundredVisionsGuy)</a>'
+copyright: 'copyright: Copyright &copy; 2022 by <a href="https://github.com/HundredVisionsGuy">Chris Winikka (HundredVisionsGuy)</a>'
+
+docs_dir: "docs/sources"
 
 extra:
     social:
         - icon: fontawesome/brands/linkedin
           link: https://www.linkedin.com/in/chris-winikka-31753326/
 
-# Navigation
-# There is no 'nav' in this config because we use mkdocs-awesome-pages-plugin
-# The ordering of pages in the docs folder are now in a `.pages` file instead
-
 theme:
     name: material
-    custom_dir: docs/docs_assets/theme/
+    custom_dir: docs/theme/
     palette:
         # scheme: preference uses dark or light mode based on user (OS) preference
         scheme: preference
@@ -22,8 +20,17 @@ theme:
         accent: #3bb027
     icon:
         logo: fontawesome/solid/code
-    favicon: 'docs/docs_assets/images/favicon.ico'
+    favicon: 'docs/assets/images/favicon.ico'
     language: 'en'
+    # maybe add features 
+    # per https://github.com/davidenunes/tensorx/blob/master/mkdocs.yml
+
+nav:
+    - Home: index.md
+    - Getting Started: 
+        - Installation: start/install.md
+        - Tutorial: start/tutorial.md
+    - API: api/index.md
 
 
 plugins:
@@ -65,9 +72,6 @@ markdown_extensions:
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
     - pymdownx.inlinehilite
     - pymdownx.keys
     - pymdownx.mark

@@ -1,10 +1,11 @@
-sources_dir: docs/API
+sources_dir: docs/sources
 templates_dir: docs/templates
+docstring_template: docs/docstring_template.md
 repo: https://github.com/HundredVisionsGuy/file-clerk
 version: main
 
 pages:
-  - page: "clerk.md"
+  - page: "api/index.md"
     source: "file_clerk/clerk.py"
     functions:
       - file_exists
