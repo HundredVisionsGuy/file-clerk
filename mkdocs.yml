@@ -14,7 +14,7 @@ extra:
 
 theme:
     name: material
-    custom_dir: docs_templates/docs_assets/theme/
+    custom_dir: docs/docs_assets/theme/
     palette:
         # scheme: preference uses dark or light mode based on user (OS) preference
         scheme: preference
