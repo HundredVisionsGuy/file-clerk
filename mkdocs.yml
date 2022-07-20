@@ -14,15 +14,15 @@ extra:
 
 theme:
     name: material
-    custom_dir: docs_assets/theme/
+    custom_dir: docs_templates/docs_assets/theme/
     palette:
         # scheme: preference uses dark or light mode based on user (OS) preference
         scheme: preference
         primary: purple
-        accent: #ff5177
+        accent: #3bb027
     icon:
         logo: fontawesome/solid/code
-    favicon: '/docs_assets/images/favicon.ico'
+    favicon: 'docs/docs_assets/images/favicon.ico'
     language: 'en'
 
 
@@ -41,7 +41,7 @@ plugins:
         enable_default_jupyter_cell_styling: false
         enable_default_pandas_dataframe_styling: true
     - awesome-pages
-#    - enumerate-headings
+    - enumerate-headings
     - print-site:
         exclude:
             - archive/*
