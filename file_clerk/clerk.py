@@ -49,10 +49,7 @@ def delete_file(filepath: str):
     """ deletes file in path but only if it exists
 
     Args:
-        file_path (str): The file location
-
-    Returns:
-        None
+        filepath (str): The file location
     """
     data_file = Path(filepath)
     try:
@@ -65,7 +62,7 @@ def get_path_list(path: str) -> list:
     """ Returns a list of each path part using slash as separator.
 
     Args:
-        file_path (str): The file location using the Posix format
+        path (str): The file location using the Posix format
             (forward/slashes)
 
     Returns:
@@ -82,7 +79,7 @@ def get_full_path_string(path: str):
     """returns absolute path to file in relative path.
 
     Args:
-        file_path (str): The file location using the Posix format
+        path (str): The file location using the Posix format
             (forward/slashes)
 
     Returns:
@@ -198,8 +195,8 @@ def get_all_files_of_type(dir_path: str, filetype: str) -> list:
     Args:
         dir_path (str): The path to a directory using Posix format
             (forward slashes e.g. path/to/file.ext)
-        file_type (str): An extension in the form of a string (without
-            the dot (html, css, js, etc.))
+        filetype (str): An extension in the form of a string (without
+            the dot (e.g. html, css, js, etc.)
 
     Returns:
         files (list): A list of all html, css, and javascript files
@@ -231,9 +228,9 @@ def remove_tags(element: str) -> str:
     """Removes all HTML tags from another tag's contents
 
     Args:
-        element (str): the contents of a tag as a string form which might or
-        might not have extra tags (in particular inline tags, such as <em>
-        or <a>, etc.)
+        element (str): the contents of a tag as a string form which may or
+            may not have extra tags (in particular inline tags, such as :code:`<em>`
+            or :code:`<a>`, etc.)
 
     Returns:
         tagless_content (str): the contents of the tag minus any inner tags.
