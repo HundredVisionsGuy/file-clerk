@@ -1,7 +1,7 @@
 # Explanation
 
 ## The (not tragic) Back story
-The file-clerk module was initially a few functions in a script called main. It was created for a project designed to process csv files.
+The file-clerk module was initially a few functions in a script called main. It was created for a project designed to process csv files.  
 
 I found the functions to be handy enough that when I created a new project that would need to deal with files, I ported over the relevant functions into a script named clerk because it basically was my file-handling clerk.
 
