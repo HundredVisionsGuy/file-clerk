@@ -1583,7 +1583,7 @@ docs = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-napoleon"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "04d1e645f3284065756508a22870fed8518c6e6c40119997805054dde5cc5025"
+content-hash = "824b88b3655ce0c8502e5c919b42d3d5f41da98b29d532975d2602b429ce2757"
 
 [metadata.files]
 alabaster = [

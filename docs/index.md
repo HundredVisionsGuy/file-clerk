@@ -30,4 +30,3 @@ I'd like to thank Guido van Rossum for his love of Monty Python and creating the
 I'd also like to thank [Real Python](https://realpython.com/) for being my go-to source for expanding my toolset. 
 
 If you can read this, it's because **Real Python** came through yet again by publishing ***[Build Your Python Project Documentation With MkDocs](https://realpython.com/python-project-documentation-with-mkdocs/)***, written by [Martin Breuss](https://realpython.com/python-project-documentation-with-mkdocs/#author) and his trusty team of developers who helped work on the tutorial.
-

@@ -18,14 +18,15 @@ Mac, and Linux (Windows is the one with backslashes - wacky, I know.).
   just_css_files = get_all_files_of_type(project_path, "css")
 """
 # SPDX-License-Identifier: MIT
-
 import collections
+import csv
 import re
 from pathlib import Path
+
 import nltk
 from bs4 import BeautifulSoup
 
-nltk.download('punkt')
+nltk.download("punkt")
 working_dir = Path.cwd()
 
 # tag removal pattern
@@ -33,7 +34,7 @@ TAG_RE = re.compile(r"<[^>]+>")
 
 
 def file_exists(file_path: str) -> bool:
-    """ Returns True or False: whether file in path exists.
+    """Returns True or False: whether file in path exists.
 
     Args:
         file_path (str): The file location
@@ -46,7 +47,7 @@ def file_exists(file_path: str) -> bool:
 
 
 def delete_file(filepath: str):
-    """ deletes file in path but only if it exists
+    """deletes file in path but only if it exists
 
     Args:
         filepath (str): The file location
@@ -59,7 +60,7 @@ def delete_file(filepath: str):
 
 
 def get_path_list(path: str) -> list:
-    """ Returns a list of each path part using slash as separator.
+    """Returns a list of each path part using slash as separator.
 
     Args:
         path (str): The file location using the Posix format
@@ -94,7 +95,7 @@ def get_full_path_string(path: str):
 
 
 def file_to_string(path: str) -> str:
-    """ Returns contents of file as a string.
+    """Returns contents of file as a string.
 
     Args:
         path (str): The path to a file using Posix format (forward
@@ -110,7 +111,7 @@ def file_to_string(path: str) -> str:
 
 
 def get_file_type(path: str) -> str:
-    """ returns the extension of the file in the path.
+    """returns the extension of the file in the path.
 
     Args:
         path (str): The path to a file using Posix format (forward
@@ -127,7 +128,7 @@ def get_file_type(path: str) -> str:
 
 
 def get_file_name(path: str) -> str:
-    """ returns the name of the file in the path.
+    """returns the name of the file in the path.
 
     Args:
         path (str): The path to a file using Posix format (forward
@@ -158,12 +159,12 @@ def get_linked_css(contents_str: str) -> list:
 
     if len(linked_files) > 1:
         for file in linked_files:
-            linked_file = file.attrs.get('href')
+            linked_file = file.attrs.get("href")
             if "https://" in linked_file or "http://" in linked_file:
                 continue
             filenames.append(linked_file)
     elif len(linked_files) == 1:
-        filename = linked_files[0].attrs.get('href')
+        filename = linked_files[0].attrs.get("href")
         if "https://" in filename or "http://" in filename:
             return None
         filenames.append(filename)
@@ -173,7 +174,7 @@ def get_linked_css(contents_str: str) -> list:
 
 
 def get_all_project_files(dir_path: str) -> list:
-    """ returns a list of all files from the directory in the path.
+    """returns a list of all files from the directory in the path.
 
     Args:
         dir_path (str): The path to a directory using Posix format
@@ -190,7 +191,7 @@ def get_all_project_files(dir_path: str) -> list:
 
 
 def get_all_files_of_type(dir_path: str, filetype: str) -> list:
-    """ returns all files of a particular type from a directory.
+    """returns all files of a particular type from a directory.
 
     Args:
         dir_path (str): The path to a directory using Posix format
@@ -209,7 +210,7 @@ def get_all_files_of_type(dir_path: str, filetype: str) -> list:
 
 
 def split_into_sentences(contents: str) -> list:
-    """ Returns a list of each sentence from the text.
+    """Returns a list of each sentence from the text.
 
     Args:
         contents (str): A string of text (typically from a tag) that
@@ -219,7 +220,7 @@ def split_into_sentences(contents: str) -> list:
         sentences (list): A list of each sentence from the text
             each in string format
     """
-    contents = re.sub(r'([a-z])\.([A-Z])', r'\1. \2', contents)
+    contents = re.sub(r"([a-z])\.([A-Z])", r"\1. \2", contents)
     sentences = nltk.tokenize.sent_tokenize(contents)
     return sentences
 
@@ -254,11 +255,36 @@ def clear_extra_text(my_text: str) -> str:
     return stripped_text
 
 
+def write_csv_file(filepath: str, data_list: list):
+    """Create a CSV file using a 2-D list.
+
+    This function will create a CSV file using the data_list (the
+    contents of the file) using the filepath relative to the directory
+    you set (most likely your project directory).
+
+    Args:
+        filepath: name of the full path to your file name in
+            relation to the project folder.
+            Example: `path/to/my_csv_file.csv`
+        data_list: a 2D list that will be your CSV file contents.
+            NOTE: the first row will be your headers.
+    """
+    try:
+        with open(filepath, "w", newline="") as output:
+            writer = csv.writer(output)
+            writer.writerows(data_list)
+    except Exception:
+        with open(filepath, "w", newline="", encoding="utf-8") as csvFile:
+            writer = csv.writer(csvFile)
+            writer.writerows(data_list)
+
+
 def main():
     html_with_css = "./tests/test_files/html_with_css.html"
 
     # get full path of a relative link
-    p_list = get_full_path_string(html_with_css)
+    path_list = get_full_path_string(html_with_css)
+    print(path_list)
 
     # get the extension of a file
     extension = get_file_type(html_with_css)

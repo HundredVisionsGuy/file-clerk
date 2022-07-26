@@ -1,9 +1,12 @@
 import pytest
+
 from file_clerk import __version__
 from file_clerk import clerk as clerk
 
+
 def test_version():
-    assert __version__ == '1.0.5'
+    assert __version__ == "1.0.5"
+
 
 # TODO - separate tests based on command-line flag
 css_file_path = "tests/test_files/projects/large_project/test.css"
@@ -110,9 +113,7 @@ def test_get_all_html_project_files_from_large_project():
         "tests\\test_files\\large_project\\gallery.html",
         "tests\\test_files\\large_project\\index.html",
     ]
-    results = clerk.get_all_files_of_type(
-        "tests/test_files/large_project", "html"
-    )
+    results = clerk.get_all_files_of_type("tests/test_files/large_project", "html")
     assert expected == results
 
 
