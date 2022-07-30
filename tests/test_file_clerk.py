@@ -161,3 +161,25 @@ def test_get_linked_css_for_one_filename(test_code_one):
 def test_get_linked_css_for_two_filenames(test_code_two):
     results = clerk.get_linked_css(test_code_two)
     assert "mystyles.css" in results and "styles.css" in results
+
+
+def test_write_csv_file():
+    file_contents = []
+    header = ["Name", "Age", "Occupation"]
+    file_contents.append(header)
+    contents = [
+        ["Godfrey Osterbald", "37", "Front-end Developer"],
+        ["Naomi Dorrit", "28", "Mercenary"],
+        ["Tom Foolery", "42", "Sales Rep"],
+        ["Shannon Rutherford", "23", "Dance Instructor"],
+    ]
+    file_contents += contents
+    path = "tests/test_files/test_csv.csv"
+    clerk.write_csv_file(path, file_contents)
+    assert clerk.file_exists(path)
+
+    # delete file
+    clerk.delete_file(path)
+
+    # file should not exist
+    assert not clerk.file_exists(path)
