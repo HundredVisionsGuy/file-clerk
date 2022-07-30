@@ -94,14 +94,14 @@ def test_file_to_string_in_project_directory():
 
 def test_get_all_project_files_from_large_project():
     expected = [
-        "tests\\test_files\\large_project\\about.html",
-        "tests\\test_files\\large_project\\gallery.html",
-        "tests\\test_files\\large_project\\index.html",
-        "tests\\test_files\\large_project\\css\\general.css",
-        "tests\\test_files\\large_project\\css\\grid-layout.css",
-        "tests\\test_files\\large_project\\css\\layout.css",
-        "tests\\test_files\\large_project\\css\\navigation.css",
-        "tests\\test_files\\large_project\\js\\scripts.js",
+        "tests/test_files/large_project/about.html",
+        "tests/test_files/large_project/gallery.html",
+        "tests/test_files/large_project/index.html",
+        "tests/test_files/large_project/css/general.css",
+        "tests/test_files/large_project/css/grid-layout.css",
+        "tests/test_files/large_project/css/layout.css",
+        "tests/test_files/large_project/css/navigation.css",
+        "tests/test_files/large_project/js/scripts.js",
     ]
     results = clerk.get_all_project_files("tests/test_files/large_project")
     assert expected == results
@@ -109,9 +109,9 @@ def test_get_all_project_files_from_large_project():
 
 def test_get_all_html_project_files_from_large_project():
     expected = [
-        "tests\\test_files\\large_project\\about.html",
-        "tests\\test_files\\large_project\\gallery.html",
-        "tests\\test_files\\large_project\\index.html",
+        "tests/test_files/large_project/about.html",
+        "tests/test_files/large_project/gallery.html",
+        "tests/test_files/large_project/index.html",
     ]
     results = clerk.get_all_files_of_type("tests/test_files/large_project", "html")
     assert expected == results

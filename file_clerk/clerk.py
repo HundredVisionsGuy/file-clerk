@@ -204,7 +204,9 @@ def get_all_files_of_type(dir_path: str, filetype: str) -> list:
     """
     pattern = "*." + filetype + "*"
     output = []
-    files = collections.Counter(str(f) for f in Path(dir_path).rglob(pattern))
+    files = collections.Counter(
+        str(f.as_posix()) for f in Path(dir_path).rglob(pattern)
+    )
     output += files.keys()
     return output
 
