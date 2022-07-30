@@ -17,8 +17,6 @@ Typical usage example:
 
 :code:`code_string = file_to_string("path/to/file.html")`
 
-```
-project_path = "path/to/project"
-all_project_files = get_all_project_files(project_path)
-just_css_files = get_all_files_of_type(project_path, "css")
-```
+:code:`project_path = "path/to/project"`
+:code:`all_project_files = get_all_project_files(project_path)`
+:code:`just_css_files = get_all_files_of_type(project_path, "css")`
