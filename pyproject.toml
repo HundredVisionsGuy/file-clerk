@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "file-clerk"
-version = "1.0.7"
+version = "1.0.8"
 description = "A collection of functions for dealing with files and file content."
 authors = ["hundredvisionsguy <cwinikka@gmail.com>"]
 keywords = ["file handling", "paths", "clerk", "files"]
