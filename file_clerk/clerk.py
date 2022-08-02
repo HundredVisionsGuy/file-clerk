@@ -9,13 +9,13 @@ Mac, and Linux (Windows is the one with backslashes - wacky, I know.).
 
   Typical usage example:
 
-  extension = get_file_type("path/to/file.js")
+  `extension = get_file_type("path/to/file.js")`
 
-  code_string = file_to_string("path/to/file.html")
+  `code_string = file_to_string("path/to/file.html")`
 
-  project_path = "path/to/project"
-  all_project_files = get_all_project_files(project_path)
-  just_css_files = get_all_files_of_type(project_path, "css")
+  `project_path = "path/to/project"`
+  `all_project_files = get_all_project_files(project_path)`
+  `just_css_files = get_all_files_of_type(project_path, "css")`
 """
 # SPDX-License-Identifier: MIT
 import collections
