@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "file-clerk"
-version = "1.0.8"
+version = "1.0.9"
 description = "A collection of functions for dealing with files and file content."
 authors = ["hundredvisionsguy <cwinikka@gmail.com>"]
 keywords = ["file handling", "paths", "clerk", "files"]
 license = "MIT"
+readme = "README.rst"
 homepage = "https://github.com/HundredVisionsGuy/file-clerk"
 repository = "https://github.com/HundredVisionsGuy/file-clerk"
 documentation = "https://hundredvisionsguy.github.io/file-clerk/"
