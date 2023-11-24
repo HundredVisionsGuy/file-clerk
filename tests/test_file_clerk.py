@@ -5,7 +5,7 @@ from file_clerk import clerk as clerk
 
 
 def test_version():
-    assert __version__ == "1.1.3"
+    assert __version__ == "1.1.4"
 
 
 # TODO - separate tests based on command-line flag
@@ -123,7 +123,8 @@ def test_get_all_html_project_files_from_large_project():
 
 
 def test_split_into_sentences():
-    paragraph = "Hello, you! How are you? i am fine Mr. selenium.\nsee ya later."
+    paragraph = "Hello, you! How are you? i am fine Mr. selenium."
+    paragraph += "\nsee ya later."
     results = len(clerk.split_into_sentences(paragraph))
     expected = 4
     assert results == expected
