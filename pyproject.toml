@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "file-clerk"
-version = "1.1.4"
+version = "1.1.5"
 description = "A collection of functions for dealing with files and file content."
 authors = ["hundredvisionsguy <cwinikka@gmail.com>"]
 keywords = ["file handling", "paths", "clerk", "files"]
@@ -25,7 +25,7 @@ python = "^3.8"
 nltk = "^3.7"
 bs4 = "^0.0.1"
 isort = "^5.10.1"
-black = "^22.6.0"
+black = "*"
 autoflake8 = "^0.3.2"
 pre-commit = "*"
 pip-licenses = "^3.5.4"
