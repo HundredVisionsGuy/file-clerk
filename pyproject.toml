@@ -21,7 +21,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.9.0,<4.0"
 nltk = "*"
 bs4 = "*"
 isort = "*"
@@ -49,6 +49,7 @@ pyrsistent = "*"
 mkdocstrings = "*"
 mkdocstrings-python = "*"
 tqdm = "*"
+waitress = "^3.0.1"
 
 [tool.poetry.extras]
 docs = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-napoleon"]
