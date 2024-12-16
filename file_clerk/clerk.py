@@ -237,8 +237,8 @@ def remove_tags(element: str) -> str:
 
     Args:
         element (str): the contents of a tag as a string form which may or
-            may not have extra tags (in particular inline tags, such as :code:`<em>`
-            or :code:`<a>`, etc.)
+            may not have extra tags (in particular inline tags, such as :code:
+            `<em>` or :code:`<a>`, etc.)
 
     Returns:
         tagless_content (str): the contents of the tag minus any inner tags.
@@ -254,7 +254,8 @@ def clear_extra_text(my_text: str) -> str:
         my_text (str): text which may include line returns or extra space.
 
     Returns:
-        stripped_text (str): text without any line returns or additional spaces.
+        stripped_text (str): text without any line returns or additional
+            spaces.
     """
     my_text = my_text.replace("\n", "")
     my_text = re.sub(r"\s+", " ", my_text)
