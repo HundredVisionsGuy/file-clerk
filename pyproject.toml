@@ -49,7 +49,6 @@ pyrsistent = "*"
 mkdocstrings = "*"
 mkdocstrings-python = "*"
 tqdm = "*"
-waitress = "^3.0.1"
 
 [tool.poetry.extras]
 docs = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-napoleon"]
