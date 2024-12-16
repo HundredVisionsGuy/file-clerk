@@ -223,7 +223,12 @@ def split_into_sentences(contents: str) -> list:
             each in string format
     """
     contents = re.sub(r"([a-z])\.([A-Z])", r"\1. \2", contents)
-    sentences = nltk.tokenize.sent_tokenize(contents)
+    try:
+        sentences = nltk.sent_tokenize(contents, language="english")
+    except LookupError:
+        # This was a fall-back after errors
+        sentence_endings = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s"
+        sentences = re.split(sentence_endings, contents)
     return sentences
 
 
