@@ -5,7 +5,7 @@ from file_clerk import clerk as clerk
 
 
 def test_version():
-    assert __version__ == "1.1.9"
+    assert __version__ == "1.1.10"
 
 
 # TODO - separate tests based on command-line flag
