@@ -25,6 +25,7 @@ from pathlib import Path
 
 import nltk
 from bs4 import BeautifulSoup
+from nltk.tokenize import PunktTokenizer
 
 nltk.download("punkt")
 working_dir = Path.cwd()
@@ -222,10 +223,13 @@ def split_into_sentences(contents: str) -> list:
         sentences (list): A list of each sentence from the text
             each in string format
     """
-    contents = re.sub(r"([a-z])\.([A-Z])", r"\1. \2", contents)
+
+    # contents = re.sub(r"([a-z])\.([A-Z])", r"\1. \2", contents)
     try:
-        sentences = nltk.sent_tokenize(contents, language="english")
-    except LookupError:
+        sentence_detector = PunktTokenizer()
+        sentences = sentence_detector.sentences_from_text(contents)
+    except LookupError as err:
+        print(err)
         # This was a fall-back after errors
         sentence_endings = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s"
         sentences = re.split(sentence_endings, contents)
