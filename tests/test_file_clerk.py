@@ -1,11 +1,11 @@
 import pytest
 
 from file_clerk import __version__
-from file_clerk import clerk as clerk
+from file_clerk import clerk
 
 
 def test_version():
-    assert __version__ == "1.1.14"
+    assert __version__ == "1.1.15"
 
 
 # TODO - separate tests based on command-line flag
